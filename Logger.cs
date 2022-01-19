@@ -27,7 +27,7 @@ namespace Module2HW1
             }
         }
 
-        public void GetLoggers()
+        public void GetLogs()
         {
             Console.WriteLine(Logs);
         }
