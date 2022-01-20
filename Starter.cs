@@ -44,7 +44,7 @@ namespace Module2HW1
                 }
             }
 
-            Logg.GetLoggers();
+            Logg.GetLogs();
             File.WriteAllText("log.txt", Logg.Logs.ToString());
         }
     }
