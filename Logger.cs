@@ -1,35 +1,36 @@
 ﻿using System;
+using System.IO;
 using System.Text;
 
 namespace Module2HW1
 {
     public class Logger
     {
-        private static readonly Logger _instance = new Logger();
+        private static readonly Logger _instance;
         private StringBuilder _logs;
 
         static Logger()
         {
-            _instance._logs = new StringBuilder();
+            _instance = new Logger();
         }
 
         private Logger()
         {
+            _logs = new StringBuilder();
         }
 
         public StringBuilder Logs => _logs;
 
-        public static Logger Instance
+        public static Logger Instance => _instance;
+
+        public void WriteLogs()
         {
-            get
-            {
-                return _instance;
-            }
+            Console.WriteLine(Logs.ToString());
         }
 
-        public void GetLogs()
+        public void Tofile()
         {
-            Console.WriteLine(Logs);
+            File.WriteAllText("log.txt", Logs.ToString());
         }
     }
 }

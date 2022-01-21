@@ -2,7 +2,7 @@
 
 namespace Module2HW1
 {
-    public static class Actions
+    public class Actions
     {
         private static Logger _logger;
 
@@ -20,13 +20,13 @@ namespace Module2HW1
 
         public static Result CallInfo()
         {
-            Logger.Logs.Append($"{DateTime.Now}: Info: Start method: CallInfo \n");
+            Logger.Logs.Append($"{DateTime.Now}: Info: Start method: {nameof(CallInfo)}\n");
             return new Result() { Status = true };
         }
 
         public static Result CallWarning()
         {
-            Logger.Logs.Append($"{DateTime.Now}: Warning: Skipped logic in method: CallWarning \n");
+            Logger.Logs.Append($"{DateTime.Now}: Warning: Skipped logic in method: {nameof(CallWarning)}\n");
             return new Result() { Status = true };
         }
     }
